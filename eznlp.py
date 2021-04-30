@@ -145,8 +145,7 @@ def _google_answer():
 	# Google custom search api approach
 	#!pip install google-api-python-client
 	from googleapiclient.discovery import build
-	my_api_key = 'AIzaSyD0yLGU-LY6GiUH7lLSqdx4iQUkwL1hnwg'
-	my_cse_id = 'eddd46961bc121e57'
+	from keys import *
 	def google_search(search_term, api_key, cse_id, **kwargs):
 		service = build("customsearch", "v1", developerKey=api_key)
 		res = service.cse().list(q=search_term, cx=cse_id, **kwargs).execute()
@@ -187,37 +186,15 @@ def _get_sample_data():
 	os.system('unzip en_docs.zip -d en_docs')
 	return pge_doc, ev_doc
 
-def _test_get_text():
+def _run_all_tests():
+	pge_doc, ev_doc = _get_sample_data()
 	blarg = get_text('https://drive.google.com/uc?export=download&id=13dd5nWDvdzrSf01d8g-tZzhh32ewZ-Rc', is_url=True)
-
-def _test_named_entities():
 	named_entities(pge_doc)
-
-def _test_summarize():
 	summarize(pge_doc)
-
-def _test_sentiment():
 	sentiment(pge_doc)
-
-def _test_subjects():
 	subjects(pge_doc, ['wildfires','energy','bacon','pge'])
-
-def _test_search_make_index():
 	ENINDEXDIR = './ENERGY_INDEX'
 	qae = search_make_index('./en_docs/', ENINDEXDIR, rebuild=True)
-	return qae
-
-def _test_search(qae):
 	search(qae, 'How much does solar cost?')
 	search(qae, 'solar?')
 	search(qae, 'what are small modular nuclear reactors?')
-
-def _run_all_tests():
-	pge_doc, ev_doc = _get_sample_data()
-	_test_get_text()
-	_test_named_entities()
-	_test_summarize()
-	_test_sentiment()
-	_test_subjects()
-	qae = _test_search_make_index()
-	_test_search(qae)
