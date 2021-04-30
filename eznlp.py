@@ -213,7 +213,7 @@ def _test_search(qae):
 	search(qae, 'what are small modular nuclear reactors?')
 
 def _run_all_tests():
-	pge_doc, ev_doc = _get_sample_data
+	pge_doc, ev_doc = _get_sample_data()
 	_test_get_text()
 	_test_named_entities()
 	_test_summarize()
