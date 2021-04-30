@@ -11,9 +11,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: Install
-        run: python setup.py install
+        run: pip install git+https://github.com/dpinney/eznlp
       - name: Test
         run: | #todo: complete
           echo Add other actions to build,
