@@ -63,7 +63,7 @@ Please note that this module requires multiple large machine learning libraries 
 
 # Future Work
 
-* CI testing.
+* Improved CI testing.
 * Better requirement version control.
 * Raw text synthesis. Tried huggingface gpt2 and xlnet, both have mediocre results. will have to rely on separate [gpt3 library](https://news.ycombinator.com/item?id=25819803) for this.
 * Semantic answering via google. Google has a very good question answering model trained on the entire internet. However, API access to Google is very tricky. There are some experiments in the code using [serpapi](https://stackoverflow.com/questions/54162249/is-there-a-google-api-for-people-also-ask), which is expensive at $50/month, the [Google Custom Search api](https://stackoverflow.com/a/49122258/7447778), which is free but doesn't have access to the semantic answer material, and selenium, which works great and is free but will require a lot of careful parsing.
