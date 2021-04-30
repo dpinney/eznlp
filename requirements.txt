@@ -1,0 +1,4 @@
+ktrain
+torch
+textract
+requests

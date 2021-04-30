@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Custom ignores
+eznlp github site.webloc
+eznlp.sublime-project
+3 ktrain NLP semantic search, answer, summarize #opus.ipynb
+eznlp_private_tests.py
