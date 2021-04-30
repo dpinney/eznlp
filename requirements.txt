@@ -1,4 +1,5 @@
 ktrain
 torch
+tensorflow
 textract
 requests
